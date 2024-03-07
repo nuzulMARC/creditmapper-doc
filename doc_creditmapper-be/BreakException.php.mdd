@@ -1,0 +1,12 @@
+flowchart TB
+    classDef default fill:#f9f,stroke:#333,stroke-width:2px;
+
+    Start((Start)) -->|Create Exception| Constructor[Constructor]
+    Constructor -->|Set Message| SetRawMessage[Set Raw Message]
+    Constructor --> ExceptionCreated((Exception Created))
+    ExceptionCreated -->|Get Raw Message| GetRawMessage[Get Raw Message]
+    ExceptionCreated -->|Exit Shell| ExitShell[Exit Shell]
+    GetRawMessage -->|Return Message| EndRawMessage((End - Raw Message))
+    ExitShell -->|Throw Exception| EndExit((End - Exit Shell))
+
+    class Start,EndRawMessage,EndExit default;

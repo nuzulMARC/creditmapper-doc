@@ -1,0 +1,5 @@
+flowchart TB
+    subgraph EventServiceProvider [EventServiceProvider.php]
+    direction TB
+    RegisterEvent[Registered Event] -->|triggers| SendEmailVerification[Send Email Verification Notification]
+    end

@@ -1,0 +1,39 @@
+graph TD
+    A[Start] -->|User Requests Action| B[Check Action Type]
+    B --> C{Action Type}
+    C -->|viewAny| D[Check Permission for viewAny]
+    D -->|Allowed| E[View Any Model]
+    D -->|Denied| F[Access Denied]
+    
+    C -->|viewList| G[Check Permission for viewList]
+    G -->|Allowed| H[View List]
+    G -->|Denied| F
+    
+    C -->|create| I[Check Permission for create]
+    I -->|Allowed| J[Create Model]
+    I -->|Denied| F
+    
+    C -->|update| K[Check Permission for update]
+    K -->|Allowed| L[Update Model]
+    K -->|Denied| F
+    
+    C -->|delete| M[Check Permission for delete]
+    M -->|Allowed| N[Delete Model]
+    M -->|Denied| F
+    
+    C -->|restore| O[Check Permission for restore]
+    O -->|Allowed| P[Restore Model]
+    O -->|Denied| F
+    
+    C -->|forceDelete| Q[Check Permission for forceDelete]
+    Q -->|Allowed| R[Permanently Delete Model]
+    Q -->|Denied| F
+    
+    E --> Z[End]
+    H --> Z
+    J --> Z
+    L --> Z
+    N --> Z
+    P --> Z
+    R --> Z
+    F --> Z

@@ -1,0 +1,9 @@
+graph TD
+    A[User] -->|Request| B(Controller)
+    B -->|Validate| C{Validation}
+    C -->|Fail| D[Error Response]
+    C -->|Pass| E[Business Logic]
+    E --> F[Database]
+    F -->|Data| E
+    E -->|Response Data| B
+    B -->|Response| A

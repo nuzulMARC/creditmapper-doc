@@ -1,0 +1,12 @@
+flowchart LR
+    User([User]) -->|requests| PP(PermissionPolicy)
+    PP -->|viewAny| PermDB[(Permission DB)]
+    PP -->|view| PermDB
+    PP -->|create| PermDB
+    PP -->|update| PermDB
+    PP -->|delete| PermDB
+    PP -->|restore| PermDB
+    PP -->|forceDelete| PermDB
+
+    classDef action fill:#f9f,stroke:#333,stroke-width:2px;
+    class PP action;

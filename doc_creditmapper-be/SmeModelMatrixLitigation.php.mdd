@@ -1,0 +1,12 @@
+flowchart LR
+    User([User]) -->|Requests litigation info| Controller
+    Controller -->|Fetches data using| Model[SmeModelMatrixLitigation]
+    Model -->|Queries| Database[(Database)]
+    Database -->|Returns data to| Model
+    Model -->|Sends data to| Controller
+    Controller -->|Responds to| User
+
+    style User fill:#f9f,stroke:#333,stroke-width:2px
+    style Controller fill:#bbf,stroke:#333,stroke-width:2px
+    style Model fill:#dfb,stroke:#333,stroke-width:2px
+    style Database fill:#fdd,stroke:#333,stroke-width:2px

@@ -1,0 +1,8 @@
+flowchart LR
+    A(Application) -- throws Exception --> B[Exception.php]
+    B -- calls getRawMessage --> C{Exception Handling}
+    C -- returns Raw Message --> A
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#bbf,stroke:#333,stroke-width:2px
+    style C fill:#dfd,stroke:#333,stroke-width:2px

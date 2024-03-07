@@ -1,0 +1,7 @@
+graph TD
+    Client[Client] -->|Request| ServiceProvider[ResponseJsonServiceProvider]
+    ServiceProvider -->|Defines Macros| Response[Response System]
+    Response -->|success| SuccessJSON[Success JSON Response]
+    Response -->|error| ErrorJSON[Error JSON Response]
+    SuccessJSON -->|JSON Response| Client
+    ErrorJSON -->|JSON Response| Client

@@ -1,0 +1,7 @@
+flowchart LR
+    A[User] -->|Request Verification| B(VerifyEmailController)
+    B -->|Check Email Verified| D{Is Email Verified?}
+    D -->|Yes| E[Redirect to Home with Verified]
+    D -->|No| F[Mark Email as Verified]
+    F --> G[Event: Verified]
+    G --> E

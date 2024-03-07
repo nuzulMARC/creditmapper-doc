@@ -1,0 +1,9 @@
+flowchart TD
+    A[Client Request] -->|Request Data| B(TrustProxies Middleware)
+    B -->|Set Proxies| C[Proxies]
+    B -->|Set Headers| D[Headers]
+    C -->|Use Proxies| E{Application}
+    D -->|Use Headers| E
+
+    style B fill:#f9f,stroke:#333,stroke-width:4px
+    style E fill:#bbf,stroke:#333,stroke-width:4px

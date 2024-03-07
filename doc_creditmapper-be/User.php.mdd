@@ -1,0 +1,10 @@
+flowchart LR
+    CreateUser[(Create User)] --> UserClass[User Class]
+    UpdateUser[(Update User)] --> UserClass
+    SerializeUser[(Serialize User)] --> UserClass
+    UserClass --> HideAttributes[(Hide Attributes)]
+
+    UserClass --> |Read/Write| Database[(Database)]
+
+    style UserClass fill:#f9f,stroke:#333,stroke-width:4px
+    style Database fill:#bbf,stroke:#f66,stroke-width:2px,stroke-dasharray: 5, 5

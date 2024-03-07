@@ -1,0 +1,5 @@
+graph TD
+    A[User Request] -->|Requests Channel| B(channels.php)
+    B --> C{Channel Authorization}
+    C -->|Authorized| D[Access Granted to Channel]
+    C -->|Unauthorized| E[Access Denied]

@@ -1,0 +1,9 @@
+flowchart LR
+    A(Request) -->|Get Roles| B(Index/ViewList)
+    A -->|Create Role| C(Create)
+    A -->|Assign Role| D(Assign)
+    A -->|Revoke Role| E(Revoke)
+    A -->|Delete Role| F(Destroy)
+
+    B --> G((Roles))
+    C -->

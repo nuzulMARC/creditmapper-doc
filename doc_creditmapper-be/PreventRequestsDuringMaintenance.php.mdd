@@ -1,0 +1,11 @@
+flowchart LR
+    A([Client Request]) -->|Request Data| B(PreventRequestsDuringMaintenance)
+    B -->|Filtered Request| C{Is System in Maintenance?}
+    C -->|Yes| D[Return Maintenance Message]
+    C -->|No| E[Proceed to Application]
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#bbf,stroke:#333,stroke-width:2px
+    style C fill:#ddf,stroke:#333,stroke-width:2px
+    style D fill:#fbb,stroke:#333,stroke-width:2px
+    style E fill:#bfb,stroke:#333,stroke-width:2px

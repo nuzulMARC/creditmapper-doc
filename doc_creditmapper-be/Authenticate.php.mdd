@@ -1,0 +1,9 @@
+flowchart LR
+    User([User]) -->|Request| Authenticate
+    Authenticate -->|Redirect to Login| Login[Login Page]
+    Authenticate -.->|Check Auth| Database[(Database)]
+    Database -.->|Return Auth Status| Authenticate
+
+    style Authenticate fill:#f9f,stroke:#333,stroke-width:2px
+    style Database fill:#bbf,stroke:#333,stroke-width:2px
+    style Login fill:#fbb,stroke:#333,stroke-width:2px

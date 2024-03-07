@@ -1,0 +1,4 @@
+graph TD;
+    A[Request Inputs] -->|Data to Trim| B(Trim Strings)
+    B -->|Trimmed Data| C[Processed Request]
+    A -->|Except: current_password, password, password_confirmation| B

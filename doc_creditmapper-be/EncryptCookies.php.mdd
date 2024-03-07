@@ -1,0 +1,8 @@
+flowchart LR
+    A([Client]) -->|Request w/ Cookies| B(EncryptCookies)
+    B -->|Encrypted Cookies| C{Check Exempt}
+    C -->|Exempt| D([Exempt Cookies])
+    C -->|Not Exempt| E([Encrypt])
+    E --> F([Encrypted Cookies])
+    F -->|Response w/ Encrypted Cookies| A
+    D -->|Response w/ Original Cookies| A

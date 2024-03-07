@@ -1,0 +1,5 @@
+flowchart TD
+    A[Application Logic] -->|Throws| B[UnexpectedTargetException]
+    B -->|Caught by| C[Exception Handler]
+    C -->|Logs| D[Log File]
+    C -->|Responds| E[User Interface]

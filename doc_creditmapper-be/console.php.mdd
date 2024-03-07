@@ -1,0 +1,5 @@
+graph TD
+    A(console.php) -->|defines| B(Artisan command: inspire)
+    B -->|calls| C(Inspiring::quote)
+    C -->|returns quote to| B
+    B -->|outputs| D(Console)

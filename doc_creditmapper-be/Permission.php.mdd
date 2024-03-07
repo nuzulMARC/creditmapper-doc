@@ -1,0 +1,3 @@
+flowchart LR
+    AdminUser(Admin User) -->|Requests Permission Management| ManagePermissions(Manage Permissions)
+    ManagePermissions -->|Read/Write| PermissionsDB(Permissions Database)

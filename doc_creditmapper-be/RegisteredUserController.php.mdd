@@ -1,0 +1,9 @@
+flowchart LR
+    A[User] -->|Registration Request| B(RegisteredUserController)
+    B -->|Validates Request| C{Validation}
+    C -->|Success| D[Database]
+    C -->|Failure| E[Error Response]
+    D -->|User Created| F[Event: Registered]
+    D -->|User Logged In| G[Auth Session]
+    F -->|Event Triggered| H[Response: No Content]
+    G --> H

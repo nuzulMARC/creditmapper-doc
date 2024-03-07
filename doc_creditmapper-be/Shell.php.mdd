@@ -1,0 +1,16 @@
+flowchart LR
+    A[External Entity: User] -->|Input| B(Shell.php)
+    B -->|Processed Input| D[Data Store: Context]
+    B -->|Output| E[External Entity: Console]
+    D -->|Retrieve Context| B
+    B -->|Error Handling| F[Process: Exception Handling]
+    F -->|Log/Error Output| E
+    B -->|Execution Result| G[Data Store: Execution History]
+    G -->|Access History| B
+
+    classDef entity fill:#f9f,stroke:#333,stroke-width:2px;
+    classDef datastore fill:#fcf,stroke:#f66,stroke-width:2px;
+    classDef process fill:#ccf,stroke:#33f,stroke-width:2px;
+    class A,E entity;
+    class D,G datastore;
+    class B,F process;

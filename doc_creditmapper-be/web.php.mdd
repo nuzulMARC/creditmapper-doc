@@ -1,0 +1,5 @@
+graph TD
+    User([User]) -->|Requests '/'| WebApp[Web Application]
+    WebApp -->|Returns Laravel Version| User
+    User -->|Authentication| AuthRoutes{Auth Routes}
+    AuthRoutes -->|Register/Login| WebApp

@@ -1,0 +1,9 @@
+flowchart LR
+    A[User Inputs] -->|email, password| B(LoginRequest)
+    B -->|validate inputs| C{Auth Attempt}
+    C -->|success| D[Authenticated]
+    C -->|failure| E[Rate Limiter Check]
+    E -->|pass| F[Throw ValidationException]
+    E -->|fail| G[Lockout Event]
+    F --> H[Error Response]
+    G --> H

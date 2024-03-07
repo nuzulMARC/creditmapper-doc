@@ -1,0 +1,8 @@
+graph TD
+    A[External System] -->|Requests Data| B(SMEModelCompanyResult Model)
+    B -->|Query| C[Database]
+    C -->|Returns Data| B
+    B -->|Sends Data| A
+
+    style B fill:#f9f,stroke:#333,stroke-width:2px
+    style C fill:#bbf,stroke:#333,stroke-width:2px

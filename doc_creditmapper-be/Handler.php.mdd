@@ -1,0 +1,5 @@
+flowchart TD
+    A[External Input] -->|Throwable e| B[Handler.php]
+    B --> |Register Exception Handlers| C{Exception Handling Process}
+    C -->|Log Exception| D[Logging System]
+    C -->|Handle Exception| E[Application Response]

@@ -1,0 +1,6 @@
+flowchart LR
+    A[Start] --> B{Is User Logged In?}
+    B -- Yes --> C{Is Email Verified?}
+    B -- No --> D[Return: Email Not Verified Message]
+    C -- Yes --> E[Proceed to Next Request]
+    C -- No --> D

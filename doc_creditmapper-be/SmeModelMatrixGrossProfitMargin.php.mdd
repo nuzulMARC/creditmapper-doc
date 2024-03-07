@@ -1,0 +1,5 @@
+graph TD
+    A[External Entity] -->|Data Input| B(SmeModelMatrixGrossProfitMargin)
+    B -->|Data Manipulation| C{Database}
+    C -->|Data Storage| D[Database Table: sme_model_matrix_gross_profit_margin]
+    D -->|Data Retrieval| E[End User/Application]

@@ -1,0 +1,9 @@
+flowchart LR
+    Database((Database))
+    Model(SmeModelMatrixSalesOverTotalAssets)
+    Controller(Controller)
+    View(View)
+
+    Database -->|Read/Write| Model
+    Model -->|Data| Controller
+    Controller -->|Render| View

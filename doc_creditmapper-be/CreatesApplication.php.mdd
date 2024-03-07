@@ -1,0 +1,5 @@
+graph TD
+    A[Start] --> B[Load bootstrap/app.php]
+    B --> C[Make Kernel]
+    C --> D[Bootstrap Kernel]
+    D --> E[Return Application Instance]

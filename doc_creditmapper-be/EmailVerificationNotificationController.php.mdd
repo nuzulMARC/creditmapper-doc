@@ -1,0 +1,19 @@
+flowchart TB
+
+    subgraph controller [EmailVerificationNotificationController.php]
+    direction TB
+    start[Start] -->|Request| verify[Verify Email]
+    verify -->|Email Verified| redirect[Redirect to Home]
+    verify -->|Email Not Verified| sendNotification[Send Verification Email]
+    sendNotification --> response[Response JSON]
+    end
+
+    user[User] --> start
+    redirect --> user
+    response --> user
+
+    classDef process fill:#f9f,stroke:#333,stroke-width:2px;
+    classDef entity fill:#bbf,stroke:#333,stroke-width:2px;
+    classDef subgraph fill:#fff,stroke:#333,stroke-width:4px;
+    class verify,sendNotification,redirect process;
+    class user entity;

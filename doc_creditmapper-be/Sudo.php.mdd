@@ -1,0 +1,15 @@
+flowchart LR
+    User -->|uses| SudoClass[Sudo.php]
+    SudoClass -->|fetchProperty| Object[Object]
+    SudoClass -->|assignProperty| Object
+    SudoClass -->|callMethod| Object
+    SudoClass -->|fetchStaticProperty| Class[Class]
+    SudoClass -->|assignStaticProperty| Class
+    SudoClass -->|callStatic| Class
+    SudoClass -->|newInstance| NewInstance[New Instance]
+    SudoClass -->|fetchClassConst| ClassConst[Class Constant]
+
+    Object -->|returns value| User
+    Class -->|returns value| User
+    NewInstance -->|returns instance| User
+    ClassConst -->|returns constant| User

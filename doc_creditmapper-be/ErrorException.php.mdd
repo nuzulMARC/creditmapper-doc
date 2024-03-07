@@ -1,0 +1,6 @@
+flowchart TD
+    A[External Error Trigger] -->|Error Data| B(ErrorException::throwException)
+    B -->|Create ErrorException| C{ErrorException}
+    C -->|Formatted Error Message| D[External Error Handler]
+    E[Error] -->|Convert to ErrorException| F(ErrorException::fromError)
+    F --> C

@@ -1,0 +1,3 @@
+flowchart LR
+    A[External Entity] -->|Interacts with| B(SmeModelResourceBusinessType Model)
+    B -->|Reads/Writes| C[Database: sme_model_resource_business_type]

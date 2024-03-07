@@ -1,0 +1,24 @@
+graph TD
+    Client -->|Request| List[List SME Models]
+    Client -->|Request| Init[Initialize SME Model]
+    Client -->|Request| View[View SME Model]
+    Client -->|Request| Compute[Compute SME Model]
+    Client -->|Request| Matrix[Fetch Matrix]
+    Client -->|Request| Resource[Fetch Resource]
+    Client -->|Request| CompanyFinancial[Fetch Company Financial]
+
+    List -->|Response| Client
+    Init -->|Response| Client
+    View -->|Response| Client
+    Compute -->|Response| Client
+    Matrix -->|Response| Client
+    Resource -->|Response| Client
+    CompanyFinancial -->|Response| Client
+
+    List -->|Fetch Data| DB[(Database)]
+    Init -->|Create/Update| DB
+    View -->|Fetch Data| DB
+    Compute -->|Compute & Update| DB
+    Matrix -->|Fetch Data| DB
+    Resource -->|Fetch Data| DB
+    CompanyFinancial -->|Fetch Data| DB

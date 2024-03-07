@@ -1,0 +1,17 @@
+graph TD
+    A(Start) --> B{Is Maintenance Mode}
+    B -- Yes --> C[Show Maintenance Page]
+    B -- No --> D[Register Autoloader]
+    D --> E[Bootstrap Application]
+    E --> F[Handle Request]
+    F --> G[Send Response]
+    G --> H[Terminate Request]
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#bbf,stroke:#333,stroke-width:2px
+    style C fill:#fbb,stroke:#333,stroke-width:2px
+    style D fill:#ddf,stroke:#333,stroke-width:2px
+    style E fill:#dfd,stroke:#333,stroke-width:2px
+    style F fill:#fdf,stroke:#333,stroke-width:2px
+    style G fill:#fdd,stroke:#333,stroke-width:2px
+    style H fill:#ffd,stroke:#333,stroke-width:2px

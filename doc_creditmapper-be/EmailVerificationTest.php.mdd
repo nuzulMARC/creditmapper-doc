@@ -1,0 +1,15 @@
+flowchart LR
+    User([User]) -->|Requests Verification| EV[Email Verification]
+    EV -->|Generates Link| ES[Email Service]
+    ES -->|Sends Email| User
+    User -->|Clicks Link| EV
+    EV -->|Verifies Email| DB[(Database)]
+    DB -->|Updates User Status| EV
+    EV -->|Verification Result| User
+
+    classDef external fill:#f9f,stroke:#333,stroke-width:2px;
+    classDef process fill:#bbf,stroke:#333,stroke-width:2px;
+    classDef datastore fill:#ffa,stroke:#333,stroke-width:2px;
+    class User,ES external;
+    class EV process;
+    class DB datastore;

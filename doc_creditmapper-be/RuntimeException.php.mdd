@@ -1,0 +1,10 @@
+flowchart TB
+    Start(Start) --> RuntimeException[(RuntimeException)]
+    RuntimeException --> End(End)
+
+    subgraph psyShell [Psy Shell]
+        RuntimeException
+    end
+
+    classDef default fill:#f9f,stroke:#333,stroke-width:4px;
+    class psyShell default;

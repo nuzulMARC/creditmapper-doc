@@ -1,0 +1,10 @@
+flowchart TB
+    start([Start]) -->|Create FatalErrorException| constructFatalErrorException[FatalErrorException Constructor]
+    constructFatalErrorException -->|Set rawMessage| setRawMessage[Set rawMessage]
+    constructFatalErrorException -->|Format message| formatMessage[Format Error Message]
+    formatMessage -->|Call parent::__construct| callParentConstructor[Call Parent Constructor]
+    setRawMessage --> callParentConstructor
+    callParentConstructor --> end([End])
+
+    style start fill:#f9f,stroke:#333,stroke-width:2px
+    style end fill:#f9f,stroke:#333,stroke-width:2px

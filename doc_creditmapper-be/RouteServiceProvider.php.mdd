@@ -1,0 +1,9 @@
+flowchart TB
+    start((Start)) --> boot[boot method]
+    boot --> rateLimiter{Rate Limiter}
+    rateLimiter --> |API Rate Limit| apiRoutes[API Routes]
+    rateLimiter --> |Web Routes| webRoutes[Web Routes]
+    apiRoutes --> apiGroup[API Group]
+    webRoutes --> webGroup[Web Group]
+    apiGroup --> end((End))
+    webGroup --> end

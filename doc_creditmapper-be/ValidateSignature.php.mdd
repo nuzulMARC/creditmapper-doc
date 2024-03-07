@@ -1,0 +1,8 @@
+graph TD
+    A[Client] -->|Request with Signature| B(ValidateSignature)
+    B -->|Valid| C{Application}
+    B -->|Invalid| D[Error Response]
+
+    style B fill:#f9f,stroke:#333,stroke-width:4px
+    style C fill:#ccf,stroke:#333,stroke-width:2px
+    style D fill:#f99,stroke:#333,stroke-width:2px

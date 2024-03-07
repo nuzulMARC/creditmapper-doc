@@ -1,0 +1,7 @@
+graph TD
+    A[Start Test] --> B{Registration Request}
+    B --> C[Post /register]
+    C -->|User Data| D[Database]
+    D --> E{Check Authentication}
+    E -->|Authenticated| F[End Test with Success]
+    E -->|Not Authenticated| G[End Test with Failure]

@@ -1,0 +1,9 @@
+flowchart LR
+    User([User]) -->|requests| Controller(Controller)
+    Controller -->|uses| Model{{SmeModelMatrixManagementExperience}}
+    Model -->|reads/writes| DB[(sme_model_matrix_management_experience)]
+
+    style User fill:#f9f,stroke:#333,stroke-width:2px
+    style Controller fill:#bbf,stroke:#333,stroke-width:2px
+    style Model fill:#fbf,stroke:#333,stroke-width:2px
+    style DB fill:#dfb,stroke:#333,stroke-width:2px

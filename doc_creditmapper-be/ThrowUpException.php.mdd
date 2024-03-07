@@ -1,0 +1,13 @@
+flowchart LR
+    A[Throwable Creation] -->|Throwable| B[ThrowUpException Constructor]
+    B -->|Formatted Message| C[Exception Handling]
+    C --> D{Is Exception Rethrown?}
+    D -- Yes --> E[Rethrow Exception]
+    D -- No --> F[Handle Exception]
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#bbf,stroke:#333,stroke-width:2px
+    style C fill:#bfb,stroke:#333,stroke-width:2px
+    style D fill:#fbb,stroke:#333,stroke-width:2px
+    style E fill:#fbb,stroke:#333,stroke-width:2px
+    style F fill:#bfb,stroke:#333,stroke-width:2px

@@ -1,0 +1,8 @@
+flowchart LR
+    ExternalEntity([External Entity]) -->|Data Input| SmeModelMatrixResult
+    SmeModelMatrixResult -->|CRUD Operations| DB([sme_model_matrix_result Database])
+    SmeModelMatrixResult -->|Data Output| ExternalEntity
+
+    style SmeModelMatrixResult fill:#f9f,stroke:#333,stroke-width:4px
+    style DB fill:#bbf,stroke:#f66,stroke-width:2px
+    style ExternalEntity fill:#bbf,stroke:#333,stroke-width:2px

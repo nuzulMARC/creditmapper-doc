@@ -1,0 +1,5 @@
+flowchart TB
+    ExampleTest -->|calls| test_that_true_is_true
+    test_that_true_is_true -->|asserts| assertTrue[assertTrue(true)]
+    assertTrue -->|returns to| test_that_true_is_true
+    test_that_true_is_true -->|completes| ExampleTest

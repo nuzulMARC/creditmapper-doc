@@ -1,0 +1,7 @@
+graph TD
+    A[App] -->|uses| B(AppServiceProvider)
+    B -->|registers services| C{Service Container}
+    B -->|bootstraps services| D[Application Services]
+
+    C -.->|makes available| A
+    D -.->|enhances| A

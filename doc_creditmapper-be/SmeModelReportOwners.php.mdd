@@ -1,0 +1,7 @@
+flowchart TB
+    Users([Users]) -->|Request Data| Controller
+    Controller -->|Use| SmeModelReportOwners[Model: SmeModelReportOwners]
+    SmeModelReportOwners -->|CRUD Operations| DB[(Database: sme_model_report_owners)]
+    DB -->|Returns Data| SmeModelReportOwners
+    SmeModelReportOwners -->|Data| Controller
+    Controller -->|Response| Users

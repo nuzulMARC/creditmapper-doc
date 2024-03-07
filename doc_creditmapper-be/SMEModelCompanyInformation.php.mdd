@@ -1,0 +1,13 @@
+graph TD
+    User[User] -->|requests| SMEModelCompanyInformation
+    SMEModelCompanyInformation -->|accesses| DB[Database: sme_model_company_information]
+    SMEModelCompanyInformation -->|joins| SMEModelReportOwnersDB[Database: sme_model_report_owners]
+    SMEModelReportOwnersDB -->|filters by| User
+
+    classDef database fill:#f9f,stroke:#333,stroke-width:2px;
+    classDef process fill:#bbf,stroke:#f66,stroke-width:2px;
+    classDef external fill:#fbb,stroke:#666,stroke-width:2px;
+
+    class User external;
+    class SMEModelCompanyInformation process;
+    class DB,SMEModelReportOwnersDB database;

@@ -1,0 +1,5 @@
+graph TD
+    Kernel[Kernel.php] -->|Registers| Commands[Commands]
+    Kernel -->|Schedules Tasks| Scheduler[Schedule]
+    Commands -->|Load| CommandsDir[Commands Directory]
+    Scheduler -->|Use| ScheduleTasks[Tasks to be Scheduled]

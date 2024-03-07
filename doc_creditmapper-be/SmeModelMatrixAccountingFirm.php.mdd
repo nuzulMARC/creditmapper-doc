@@ -1,0 +1,10 @@
+flowchart LR
+    Client[Client] -->|Requests Data| Controller
+    Controller -->|Fetches| Model[SmeModelMatrixAccountingFirm]
+    Model -->|Queries| DB[(Database)]
+    DB -->|Returns Data| Model
+    Model -->|Data| Controller
+    Controller -->|Response| Client
+
+    classDef default fill:#f9f,stroke:#333,stroke-width:2px;
+    class Client,Controller,Model,DB default;

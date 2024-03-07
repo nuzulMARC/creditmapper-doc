@@ -1,0 +1,6 @@
+flowchart TD
+    A[External Input] -->|Uses| B(ParseErrorException)
+    B -->|Extends| C[PhpParserrror]
+    B -->|Returns| D[Exception Interface]
+
+    classDef default fill:#f9f,stroke:#333,stroke-width:2px;

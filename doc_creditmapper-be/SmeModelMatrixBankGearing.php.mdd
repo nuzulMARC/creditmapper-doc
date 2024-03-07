@@ -1,0 +1,4 @@
+flowchart LR
+    External_Entity([External Entity]) -- Data/Input --> Model_Process(SmeModelMatrixBankGearing Model)
+    Model_Process -- Data/Output --> DB_Table((sme_model_matrix_bank_gearing))
+    DB_Table -- Data --> Model_Process

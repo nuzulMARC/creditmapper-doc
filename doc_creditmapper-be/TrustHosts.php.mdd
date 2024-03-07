@@ -1,0 +1,9 @@
+flowchart LR
+    ExternalEntity1([Client]) -->|Request| TrustHosts(TrustHosts.php)
+    TrustHosts -->|Trusted Hosts Patterns| DataStore1[(Trusted Hosts Config)]
+    TrustHosts -->|Apply Trust Levels| ExternalEntity2([Application])
+
+    style TrustHosts fill:#f9f,stroke:#333,stroke-width:2px
+    style DataStore1 fill:#bbf,stroke:#333,stroke-width:2px
+    style ExternalEntity1 fill:#bfb,stroke:#333,stroke-width:2px
+    style ExternalEntity2 fill:#bfb,stroke:#333,stroke-width:2px

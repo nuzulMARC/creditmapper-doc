@@ -1,0 +1,61 @@
+flowchart TB
+    subgraph ext[External Entities]
+        user_request[User Request]
+        user_response[User Response]
+    end
+
+    subgraph data_store[Data Stores]
+        users_db[((Users Database))]
+        roles_permissions_db[((Roles & Permissions Database))]
+        sme_db[((SME Model Company Information Database))]
+    end
+
+    subgraph processes[Processes]
+        index[index]
+        user[user]
+        create[create]
+        changePassword[changePassword]
+        dashboard[dashboard]
+        showDetails[showDetails]
+        updateUser[updateUser]
+        createToken[createToken]
+        listToken[listToken]
+    end
+
+    user_request -->|Request| index
+    index -->|Data| users_db
+    users_db -->|Response| user_response
+
+    user_request -->|Request| user
+    user -->|Data| users_db
+    users_db -->|Response| user_response
+
+    user_request -->|Request| create
+    create -->|Data| users_db
+    users_db -->|Response| user_response
+
+    user_request -->|Request| changePassword
+    changePassword -->|Data| users_db
+    users_db -->|Response| user_response
+
+    user_request -->|Request| dashboard
+    dashboard -->|Data| sme_db
+    sme_db -->|Response| user_response
+
+    user_request -->|Request| showDetails
+    showDetails -->|Data| users_db
+    users_db -->|Response| user_response
+
+    user_request -->|Request| updateUser
+    updateUser -->|Data| users_db
+    users_db -->|Response| user_response
+
+    user_request -->|Request| createToken
+    createToken -->|Data| users_db
+    users_db -->|Response| user_response
+
+    user_request -->|Request| listToken
+    listToken -->|Data| users_db
+    users_db -->|Response| user_response
+
+    users_db -.->|Read/Write| roles_permissions_db

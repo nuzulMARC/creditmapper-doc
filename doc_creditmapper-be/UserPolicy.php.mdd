@@ -1,0 +1,18 @@
+graph TD
+    A[User] -->|Request| B(View Any)
+    A -->|Request| C(View)
+    A -->|Request| D(Show Details)
+    A -->|Request| E(Create)
+    A -->|Request| F(Update)
+    A -->|Request| G(Delete)
+    A -->|Request| H(Restore)
+    A -->|Request| I(Force Delete)
+
+    B -->|Response| J((Decision))
+    C -->|Response| J
+    D -->|Response| J
+    E -->|Response| J
+    F -->|Response| J
+    G -->|Response| J
+    H -->|Response| J
+    I -->|Response| J

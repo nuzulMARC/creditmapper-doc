@@ -1,0 +1,5 @@
+flowchart TD
+    A[External Data Source] -->|Data Input| B(SMEModelCompanyNonFinancialAnalysis)
+    B --> C{Data Processing}
+    C -->|Valid Data| D[Database (sme_model_company_nonfinancial_analysis)]
+    C -->|Invalid Data| E[Error Handling]

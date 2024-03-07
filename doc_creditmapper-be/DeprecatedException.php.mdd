@@ -1,0 +1,4 @@
+flowchart TB
+    ExternalEntity([External Entity]) -->|uses| PsyShell
+    PsyShell(Psy Shell) -->|throws| DeprecatedException[DeprecatedException]
+    DeprecatedException -->|extends| RuntimeException[RuntimeException]

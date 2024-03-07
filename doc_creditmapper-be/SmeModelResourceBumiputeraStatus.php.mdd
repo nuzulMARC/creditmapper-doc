@@ -1,0 +1,15 @@
+flowchart LR
+    External_Entity([External Entity]) -->|Request Data| Read_Operation[Read Data]
+    External_Entity -->|Create Data| Create_Operation[Create Data]
+    External_Entity -->|Update Data| Update_Operation[Update Data]
+    External_Entity -->|Delete Data| Delete_Operation[Delete Data]
+
+    Create_Operation --> DB[(Database)]
+    Read_Operation --> DB
+    Update_Operation --> DB
+    Delete_Operation --> DB
+
+    DB -->|Data Response| External_Entity
+
+    classDef operation fill:#f9f,stroke:#333,stroke-width:2px;
+    class Create_Operation,Read_Operation,Update_Operation,Delete_Operation operation;

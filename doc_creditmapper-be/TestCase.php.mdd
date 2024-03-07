@@ -1,0 +1,6 @@
+graph TD
+    A[External Entity] -->|Test Request| B(TestCase)
+    B -->|Uses| C[CreatesApplication Trait]
+    C -->|Generate| D[Application Instance]
+    D -->|Feedback| B
+    B -->|Test Result| E[External Entity]

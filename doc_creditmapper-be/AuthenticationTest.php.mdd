@@ -1,0 +1,6 @@
+flowchart LR
+    User([User]) -->|Credentials| AU(Authenticate User)
+    AU -->|Authentication Success| User
+    AU -->|Authentication Failure| User
+    AU -->|Fetch User| DS((Users Database))
+    DS -->|Return User| AU

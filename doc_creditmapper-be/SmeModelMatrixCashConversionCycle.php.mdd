@@ -1,0 +1,5 @@
+flowchart LR
+    A[Client] -->|requests data| B(SmeModelMatrixCashConversionCycle Model)
+    B -->|interacts with| C[Database sme_model_matrix_cash_conversion_cycle]
+    C -->|returns data to| B
+    B -->|sends data| A

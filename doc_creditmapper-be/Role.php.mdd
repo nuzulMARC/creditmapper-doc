@@ -1,0 +1,12 @@
+flowchart LR
+    User([User]) -->|requests role info| RoleClass(Role Class)
+    RoleClass -->|extends| SpatieRoleClass(Spatie Role Class)
+    RoleClass -->|uses| HasFactoryTrait(Has Factory Trait)
+    Database{{Database}} <-->|read/write role data| SpatieRoleClass
+    HasFactoryTrait -.->|generate factory| Database
+
+    style User fill:#f9f,stroke:#333,stroke-width:2px
+    style RoleClass fill:#bbf,stroke:#333,stroke-width:2px
+    style SpatieRoleClass fill:#bbf,stroke:#333,stroke-width:2px
+    style HasFactoryTrait fill:#bfb,stroke:#333,stroke-width:2px
+    style Database fill:#fbb,stroke:#333,stroke-width:4px

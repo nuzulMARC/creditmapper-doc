@@ -1,0 +1,8 @@
+flowchart LR
+    ExternalData[(External Data)] -->|Data Input| A[Database]
+    A -->|Retrieve Data| B[SMEModelCompanyFinancialAnalysis Model]
+    B -->|Processed Data| C{Decision Point}
+    C -->|Valid Data| D[Save to Database]
+    C -->|Invalid Data| E[Error Handling]
+    D -->|Data Output| ExternalSystems[(External Systems)]
+    E -->|Error Output| ExternalSystems

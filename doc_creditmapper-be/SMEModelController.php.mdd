@@ -1,0 +1,19 @@
+flowchart LR
+    Client -->|Request| Controller[SMEModelController]
+    Controller -->|list| SMEModelService
+    Controller -->|init| SMEModelService
+    Controller -->|view| SMEModelService
+    Controller -->|compute| SMEModelService
+    Controller -->|matrix| SMEModelService
+    Controller -->|resource| SMEModelService
+    Controller -->|companyFinancial| SMEModelService
+    SMEModelService -->|Response| Controller
+    Controller -->|Response| Client
+
+    classDef entity fill:#f9f,stroke:#333,stroke-width:4px;
+    classDef process fill:#bbf,stroke:#333,stroke-width:2px;
+    classDef datastore fill:#ff9,stroke:#333,stroke-width:2px;
+    
+    class Client entity;
+    class Controller process;
+    class SMEModelService process;

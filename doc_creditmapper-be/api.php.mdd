@@ -1,0 +1,40 @@
+flowchart LR
+    External_Entity([External Entity]) -- Request --> Compute[(/compute)]
+    External_Entity -- Request --> Blank[(/blank)]
+    External_Entity -- Auth Request --> Super_Admin[(/user/super-admin)]
+    External_Entity -- Auth Request --> User_Info[(/user)]
+    External_Entity -- Auth Request --> User_Dashboard[(/user/dashboard)]
+    External_Entity -- Auth Request --> User_Role_Names[(/user/getRoleNames)]
+    External_Entity -- Auth Request --> Change_Password[(/user/change-password)]
+    External_Entity -- Auth Request --> Update_User[(/user/update-user)]
+    External_Entity -- Auth Request --> Create_Token[(/user/create-token)]
+    External_Entity -- Auth Request --> List_Token[(/user/list-token)]
+    External_Entity -- Auth Request --> User_List[(/user/list)]
+    External_Entity -- Auth Request --> User_Show[(/user/show/{id})]
+    External_Entity -- Auth Request --> User_Create[(/user/create)]
+    External_Entity -- Auth Request --> Role_All[(/user/role/all)]
+    External_Entity -- Auth Request --> Role_Create[(/user/role/create)]
+    External_Entity -- Auth Request --> Role_Delete[(/user/role/delete)]
+    External_Entity -- Auth Request --> Role_Assign[(/user/role/assign)]
+    External_Entity -- Auth Request --> Role_Revoke[(/user/role/revoke)]
+    External_Entity -- Auth Request --> SME_List[(/model/sme/list)]
+    External_Entity -- Auth Request --> SME_Init[(/model/sme/init)]
+    External_Entity -- Auth Request --> SME_View[(/model/sme/view)]
+    External_Entity -- Auth Request --> SME_Compute[(/model/sme/compute)]
+    External_Entity -- Auth Request --> SME_Matrix[(/model/sme/matrix)]
+    External_Entity -- Auth Request --> SME_Resource[(/model/sme/resource)]
+    External_Entity -- Auth Request --> Company_Financial[(/resource/sme/company-financial)]
+
+    %% Assuming data stores and additional processes for simplicity
+    DB[(Database)] -- Data --> Compute
+    DB -- User Data --> User_Info
+    DB -- Role Data --> Role_All
+    DB -- SME Data --> SME_List
+
+    %% Processes interaction
+    Compute --> DB
+    User_Info --> DB
+    Role_All --> DB
+    SME_List --> DB
+
+    %% Simplification for clarity, many other flows and stores could be represented

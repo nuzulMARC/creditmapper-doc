@@ -1,0 +1,6 @@
+flowchart LR
+    A[Login Request] -->|LoginRequest| B(Authenticate)
+    B -->|Session Regeneration| C[Response: No Content]
+    A -->|Request| D{AuthenticatedSessionController}
+    E[Logout Request] -->|Request| D
+    D -->|Logout & Invalidate Session| F[Response: No Content]

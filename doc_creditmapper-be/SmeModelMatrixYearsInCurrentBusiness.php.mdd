@@ -1,0 +1,5 @@
+graph TD
+    A[Client] -->|requests data| B(SmeModelMatrixYearsInCurrentBusiness Model)
+    B -->|queries| C[Database]
+    C -->|returns data| B
+    B -->|sends data| A

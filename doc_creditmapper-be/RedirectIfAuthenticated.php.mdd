@@ -1,0 +1,6 @@
+flowchart LR
+    A[HTTP Request] --> B{Is Authenticated?}
+    B -- Yes --> C[Redirect to Home]
+    B -- No --> D[Proceed with Request]
+    C --> E[HTTP Response]
+    D --> E

@@ -1,0 +1,11 @@
+flowchart LR
+    A[Client Request] -->|Request with CSRF Token| B(VerifyCsrfToken Middleware)
+    B --> C{CSRF Token Valid?}
+    C -->|Yes| D[Proceed to Next Middleware/Application Logic]
+    C -->|No| E[Return Error Response]
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#bbf,stroke:#333,stroke-width:2px
+    style C fill:#ddf,stroke:#333,stroke-width:2px
+    style D fill:#bfb,stroke:#333,stroke-width:2px
+    style E fill:#fbb,stroke:#333,stroke-width:2px

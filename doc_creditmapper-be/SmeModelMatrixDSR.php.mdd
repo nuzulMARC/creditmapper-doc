@@ -1,0 +1,5 @@
+flowchart LR
+    User([User]) -->|Requests Data| SmeModelMatrixDSR
+    SmeModelMatrixDSR([Process: Interact with DB]) -->|Fetch/Update| DB((sme_model_matrix_dsr))
+    DB -->|Returns Data| SmeModelMatrixDSR
+    SmeModelMatrixDSR -->|Sends Data| User

@@ -1,0 +1,17 @@
+graph TD
+    A[External Entities] -->|Uses| B(Authentication Services)
+    B -->|Manages| C{Auth Policies}
+    B -->|Generates| D[Password Reset Link]
+    B -->|Checks| E[Super Admin Gate]
+
+    C -->|Defines Access Control| F[Models]
+    D -->|Sends to| G[Users]
+    E -->|Grants Permissions| H[Users]
+
+    style B fill:#f9f,stroke:#333,stroke-width:2px
+    style C fill:#bbf,stroke:#333,stroke-width:2px
+    style D fill:#bbf,stroke:#333,stroke-width:2px
+    style E fill:#bbf,stroke:#333,stroke-width:2px
+    style F fill:#bfb,stroke:#333,stroke-width:2px
+    style G fill:#bfb,stroke:#333,stroke-width:2px
+    style H fill:#bfb,stroke:#333,stroke-width:2px
